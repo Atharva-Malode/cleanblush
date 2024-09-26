@@ -1,90 +1,167 @@
 {
-    "Home Page": {
-      "english": {
-        "heading": "Smart Web Based Application for Dental Disease Detection using Artificial Intelligence",
-        "tagline": "Smile with Confidence"
-      },
-      "hindi": {
-        "heading": "कृत्रिम बुद्धिमत्ता का उपयोग कर दंत रोग पहचान के लिए स्मार्ट वेब आधारित अनुप्रयोग",
-        "tagline": "आत्मविश्वास के साथ मुस्कुराएं"
-      },
-      "gujarati": {
-        "heading": "કૃત્રિમ બુદ્ધિમત્તાનો ઉપયોગ કરીને દાંતની બીમારીના ઓળખ માટે સ્માર્ટ વેબ આધારિત એપ્લિકેશન",
-        "tagline": "વિશ્વાસ સાથે સ્મિત કરો"
-      },
-      "marathi": {
-        "heading": "कृत्रिम बुद्धिमत्तेचा वापर करून दंत रोग ओळखण्यासाठी स्मार्ट वेब आधारित अनुप्रयोग",
-        "tagline": "आत्मविश्वासाने हसा"
-      }
+  "Home Page": {
+    "english": {
+      "heading": "Smart Web Based Application for Dental Disease Detection using Artificial Intelligence",
+      "tagline": "Smile with Confidence"
     },
-    "Info Page": {
-      "english": {
-        "title": "Patient Information",
-        "nameLabel": "Name:",
-        "namePlaceholder": "Enter your Name",
-        "ageLabel": "Age:",
-        "agePlaceholder": "Enter your Age",
-        "genderLabel": "Gender:",
-        "genderOptions": {
-          "select": "Select Gender",
-          "male": "Male",
-          "female": "Female",
-          "other": "Other"
-        },
-        "villageLabel": "Village:",
-        "villagePlaceholder": "Enter your Village Name",
-        "submitButton": "Submit"
-      },
-      "hindi": {
-        "title": "रोगी की जानकारी",
-        "nameLabel": "नाम:",
-        "namePlaceholder": "अपना नाम दर्ज करें",
-        "ageLabel": "उम्र:",
-        "agePlaceholder": "अपनी उम्र दर्ज करें",
-        "genderLabel": "लिंग:",
-        "genderOptions": {
-          "select": "लिंग चुनें",
-          "male": "पुरुष",
-          "female": "महिला",
-          "other": "अन्य"
-        },
-        "villageLabel": "गाँव:",
-        "villagePlaceholder": "अपने गाँव का नाम दर्ज करें",
-        "submitButton": "जमा करें"
-      },
-      "gujarati": {
-        "title": "રોગી માહિતી",
-        "nameLabel": "નામ:",
-        "namePlaceholder": "તમારું નામ દાખલ કરો",
-        "ageLabel": "ઉંમર:",
-        "agePlaceholder": "તમારી ઉંમર દાખલ કરો",
-        "genderLabel": "લિંગ:",
-        "genderOptions": {
-          "select": "લિંગ પસંદ કરો",
-          "male": "પુરુષ",
-          "female": "સ્ત્રી",
-          "other": "અન્ય"
-        },
-        "villageLabel": "ગામ:",
-        "villagePlaceholder": "તમારા ગામનું નામ દાખલ કરો",
-        "submitButton": "સબમિટ કરો"
-      },
-      "marathi": {
-        "title": "रुग्ण माहिती",
-        "nameLabel": "नाव:",
-        "namePlaceholder": "तुमचे नाव प्रविष्ट करा",
-        "ageLabel": "वय:",
-        "agePlaceholder": "तुमचे वय प्रविष्ट करा",
-        "genderLabel": "लिंग:",
-        "genderOptions": {
-          "select": "लिंग निवडा",
-          "male": "पुरुष",
-          "female": "महिला",
-          "other": "इतर"
-        },
-        "villageLabel": "गाव:",
-        "villagePlaceholder": "तुमच्या गावाचे नाव प्रविष्ट करा",
-        "submitButton": "सबमिट करा"
-      }
+    "hindi": {
+      "heading": "कृत्रिम बुद्धिमत्ता का उपयोग कर दंत रोग पहचान के लिए स्मार्ट वेब आधारित अनुप्रयोग",
+      "tagline": "आत्मविश्वास के साथ मुस्कुराएं"
+    },
+    "marathi": {
+      "heading": "कृत्रिम बुद्धिमत्तेचा वापर करून दंत रोग ओळखण्यासाठी स्मार्ट वेब आधारित अनुप्रयोग",
+      "tagline": "आत्मविश्वासाने हसा"
     }
+  },
+  "Info Page": {
+    "english": {
+      "title": "Patient Information",
+      "nameLabel": "Name:",
+      "namePlaceholder": "Enter your Name",
+      "ageLabel": "Age:",
+      "agePlaceholder": "Enter your Age",
+      "genderLabel": "Gender:",
+      "genderOptions": {
+        "select": "Select Gender",
+        "male": "Male",
+        "female": "Female",
+        "other": "Other"
+      },
+      "villageLabel": "Village:",
+      "villagePlaceholder": "Enter your Village Name",
+      "submitButton": "Submit"
+    },
+    "hindi": {
+      "title": "रोगी की जानकारी",
+      "nameLabel": "नाम:",
+      "namePlaceholder": "अपना नाम दर्ज करें",
+      "ageLabel": "उम्र:",
+      "agePlaceholder": "अपनी उम्र दर्ज करें",
+      "genderLabel": "लिंग:",
+      "genderOptions": {
+        "select": "लिंग चुनें",
+        "male": "पुरुष",
+        "female": "महिला",
+        "other": "अन्य"
+      },
+      "villageLabel": "गाँव:",
+      "villagePlaceholder": "अपने गाँव का नाम दर्ज करें",
+      "submitButton": "जमा करें"
+    },
+    "marathi": {
+      "title": "रुग्ण माहिती",
+      "nameLabel": "नाव:",
+      "namePlaceholder": "तुमचे नाव प्रविष्ट करा",
+      "ageLabel": "वय:",
+      "agePlaceholder": "तुमचे वय प्रविष्ट करा",
+      "genderLabel": "लिंग:",
+      "genderOptions": {
+        "select": "लिंग निवडा",
+        "male": "पुरुष",
+        "female": "महिला",
+        "other": "इतर"
+      },
+      "villageLabel": "गाव:",
+      "villagePlaceholder": "तुमच्या गावाचे नाव प्रविष्ट करा",
+      "submitButton": "सबमिट करा"
+    }
+
+  },
+  "Select": {
+      "english":{
+          "title": "Select Disease",
+          "dis1": "OSMF",
+          "dis2": "Gingivitis",
+          "dis3": "Gingival Phenotype",
+          "dis4": "Calculus",
+          "dis5": "Caries"
+      },
+      "hindi":{
+          "title": "रोग का चयन करें",
+          "dis1": "ओ एस एम एफ",
+          "dis2": "मसूड़े की सूजन",
+          "dis3": "जिंजिवल फेनोटाइप",
+          "dis4": "कॅल्क्युलस",
+          "dis5": "कॅरीज"
+      },
+      "marathi":{
+          "title": "रोग निवडा",
+          "dis1": "ओ एस एम एफ",
+          "dis2": "हिरड्यांना आलेली सूज",
+          "dis3": "जिंजिवल फेनोटाइप",
+          "dis4": "कॅल्क्युलस",
+          "dis5": "कॅरीज"
+      }
+  },
+  "osmf":{
+      "english":{
+          "title": "OSMF Prediction",
+          "option": "Select Camera",
+          "streambtn": "Start Streaming",
+          "cap": "Capture Again",
+          "upimg": "Upload Image",
+          "crop": "Crop Image",
+          "check": "Check for disease",
+          "dou": "Directions of Use",
+          "res": "Results"
+      },
+      "hindi":{
+          "title": "ओ एस एम एफ की जांच",
+          "option": "कैमरा चुनें",
+          "streambtn": "शुरू करे",
+          "cap": "फ़िर से फोटो खींचे",
+          "upimg": "छवि अपलोड करें",
+          "crop": "फोटो को क्रॉप करें",
+          "check": "जाँच करें",
+          "dou": "उपयोग की दिशा",
+          "res": "परिणाम"
+      },
+      "marathi":{
+          "title": "ओ एस एम एफ तपासा",
+          "option": "कॅमेरा निवडा",
+          "streambtn": "सुरु करा",
+          "cap": "पुन्हा फोटो घ्या",
+          "upimg": "चित्र अपलोड करा",
+          "crop": "फोटो क्रॉप करा",
+          "check": "तपासा",
+          "dou": "वापरण्याची दिशा",
+          "res": "परिणाम"
+      }
+  },
+  "pages": {
+      "english":{
+          "gingi": "Gingivitis Prediction",
+          "pheno": "Phenotype Prediction",
+          "cal": "Calculus Prediction",
+          "car": "Caries Prediction"
+      },
+      "hindi":{
+          "gingi": "मसूड़े की सूजन की जाँच करें",
+          "pheno": "फेनोटाइप की जाँच करें",
+          "cal": "कॅल्क्युलस की जाँच करें",
+          "car": "कॅरीज की जाँच करें"
+      },
+      "marathi":{
+          "gingi": "हिरड्यांना आलेली सूज तपासा",
+          "pheno": "फेनोटाइप तपासा",
+          "cal": "कॅल्क्युलस तपासा",
+          "car": "कॅरीज तपासा"
+      }
+  },
+
+  "Nav":{
+      "english":{
+          "btn1": "Previous",
+          "btn2": "Next"
+      },
+      "hindi":{
+          "btn1": "पिचला",
+          "btn2": "अगला"
+      },
+      "marathi":{
+          "btn1": "मागील",
+          "btn2": "पुढे"
+      }
+  }
+
 }  

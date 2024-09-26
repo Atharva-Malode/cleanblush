@@ -12,22 +12,32 @@ function InfoPage() {
 
   useEffect(() => {
     localStorage.setItem('language', language);
+    console.log('Language:', language);
   }, [language]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    // Check if formData exists and remove only that specific item
     const existingFormData = localStorage.getItem("formData");
     if (existingFormData) {
-      localStorage.clear();
+      localStorage.removeItem("formData"); // Only remove formData, not other localStorage items
     }
+  
     const formData = {
       name: name,
       age: age,
       gender: gender,
       village: village
     };
+    
+    // Save the new formData
     localStorage.setItem("formData", JSON.stringify(formData));
+    
+    // Navigate to the selection page
     navigate("/selection");
+    
+    // Log the form data
     console.log(formData);
   };
 

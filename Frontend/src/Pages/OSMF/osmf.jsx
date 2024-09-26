@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import NavButton from "../../components/btn";
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
+import content from "../data.json";
 
 function Osmf({ onPredictionChange }) {
     const [cameras, setCameras] = useState([]);
@@ -19,8 +20,32 @@ function Osmf({ onPredictionChange }) {
     const [crop, setCrop] = useState(null);
     const [uploadMode, setUploadMode] = useState(false);
     const [openDou, setOpenDou] = useState(false);
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'english');
 
     const videoRef = useRef(null);
+
+    useEffect(() => {
+        // Check for changes in localStorage directly
+        const handleStorageChange = () => {
+          const newLanguage = localStorage.getItem('language');
+          if (newLanguage) {
+            setLanguage(newLanguage);
+            console.log('Language:', newLanguage);
+          }
+        };
+    
+        // Call the handler to set initial language
+        handleStorageChange();
+    
+        // Listen for storage changes
+        window.addEventListener('storage', handleStorageChange);
+    
+        // Cleanup event listener on unmount
+        return () => {
+          window.removeEventListener('storage', handleStorageChange);
+        };
+      }, []);
+
 
     useEffect(() => {
         console.log("Prediction state:", predictedClass);
@@ -188,10 +213,12 @@ function Osmf({ onPredictionChange }) {
 
     return (
         <div>
-            <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">OSMF Prediction</h1>
+            <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">
+                {content.osmf[language].title}
+            </h1>
 
             <div className="mt-2 flex flex-col md:flex-row md:items-center">
-                <h2 className="text-2xl font-medium text-gray-700 mr-2">Select Camera:</h2>
+                <h2 className="text-2xl font-medium text-gray-700 mr-2">{content.osmf[language].option}</h2>
                 <select
                     value={selectedCamera}
                     onChange={handleCameraChange}
@@ -207,12 +234,12 @@ function Osmf({ onPredictionChange }) {
                     <button onClick={toggleStreaming} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         {streaming ? "Stop Streaming" : "Start Streaming"}
                     </button>
-                    <button onClick={capturePhoto} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Capture Photo</button>
+                    <button onClick={capturePhoto} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">{content.osmf[language].cap}</button>
                     <button onClick={toggleUploadMode} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                        Upload Image
+                        {content.osmf[language].upimg}
                     </button>
                     <button onClick={() => setOpenDou(true)} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                        Directions of Use
+                        {content.osmf[language].dou}
                     </button>
                 </div>
             </div>

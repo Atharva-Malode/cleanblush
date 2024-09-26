@@ -40,7 +40,6 @@ function HomePage() {
         >
           <option value="english">English</option>
           <option value="hindi">Hindi</option>
-          <option value="gujarati">Gujarati</option>
           <option value="marathi">Marathi</option>
         </select>
       </div>
