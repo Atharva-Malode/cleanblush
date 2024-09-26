@@ -1,0 +1,42 @@
+{
+  "name": "birac",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "proxy": "http://127.0.0.1:5000",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "coffeescript": "^2.7.0",
+    "flowbite": "^2.2.1",
+    "lucide-react": "^0.439.0",
+    "package-lock.json": "^1.0.0",
+    "package.json": "^0.0.0",
+    "react": "^18.2.0",
+    "react-avatar-editor": "^13.0.2",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.2.0",
+    "react-image-crop": "^11.0.5",
+    "react-router-dom": "^6.21.1",
+    "react-scroll": "^1.9.0",
+    "react-simple-keyboard": "^3.7.116",
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.8"
+  }
+}

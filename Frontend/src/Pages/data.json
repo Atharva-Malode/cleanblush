@@ -1,0 +1,90 @@
+{
+    "Home Page": {
+      "english": {
+        "heading": "Smart Web Based Application for Dental Disease Detection using Artificial Intelligence",
+        "tagline": "Smile with Confidence"
+      },
+      "hindi": {
+        "heading": "कृत्रिम बुद्धिमत्ता का उपयोग कर दंत रोग पहचान के लिए स्मार्ट वेब आधारित अनुप्रयोग",
+        "tagline": "आत्मविश्वास के साथ मुस्कुराएं"
+      },
+      "gujarati": {
+        "heading": "કૃત્રિમ બુદ્ધિમત્તાનો ઉપયોગ કરીને દાંતની બીમારીના ઓળખ માટે સ્માર્ટ વેબ આધારિત એપ્લિકેશન",
+        "tagline": "વિશ્વાસ સાથે સ્મિત કરો"
+      },
+      "marathi": {
+        "heading": "कृत्रिम बुद्धिमत्तेचा वापर करून दंत रोग ओळखण्यासाठी स्मार्ट वेब आधारित अनुप्रयोग",
+        "tagline": "आत्मविश्वासाने हसा"
+      }
+    },
+    "Info Page": {
+      "english": {
+        "title": "Patient Information",
+        "nameLabel": "Name:",
+        "namePlaceholder": "Enter your Name",
+        "ageLabel": "Age:",
+        "agePlaceholder": "Enter your Age",
+        "genderLabel": "Gender:",
+        "genderOptions": {
+          "select": "Select Gender",
+          "male": "Male",
+          "female": "Female",
+          "other": "Other"
+        },
+        "villageLabel": "Village:",
+        "villagePlaceholder": "Enter your Village Name",
+        "submitButton": "Submit"
+      },
+      "hindi": {
+        "title": "रोगी की जानकारी",
+        "nameLabel": "नाम:",
+        "namePlaceholder": "अपना नाम दर्ज करें",
+        "ageLabel": "उम्र:",
+        "agePlaceholder": "अपनी उम्र दर्ज करें",
+        "genderLabel": "लिंग:",
+        "genderOptions": {
+          "select": "लिंग चुनें",
+          "male": "पुरुष",
+          "female": "महिला",
+          "other": "अन्य"
+        },
+        "villageLabel": "गाँव:",
+        "villagePlaceholder": "अपने गाँव का नाम दर्ज करें",
+        "submitButton": "जमा करें"
+      },
+      "gujarati": {
+        "title": "રોગી માહિતી",
+        "nameLabel": "નામ:",
+        "namePlaceholder": "તમારું નામ દાખલ કરો",
+        "ageLabel": "ઉંમર:",
+        "agePlaceholder": "તમારી ઉંમર દાખલ કરો",
+        "genderLabel": "લિંગ:",
+        "genderOptions": {
+          "select": "લિંગ પસંદ કરો",
+          "male": "પુરુષ",
+          "female": "સ્ત્રી",
+          "other": "અન્ય"
+        },
+        "villageLabel": "ગામ:",
+        "villagePlaceholder": "તમારા ગામનું નામ દાખલ કરો",
+        "submitButton": "સબમિટ કરો"
+      },
+      "marathi": {
+        "title": "रुग्ण माहिती",
+        "nameLabel": "नाव:",
+        "namePlaceholder": "तुमचे नाव प्रविष्ट करा",
+        "ageLabel": "वय:",
+        "agePlaceholder": "तुमचे वय प्रविष्ट करा",
+        "genderLabel": "लिंग:",
+        "genderOptions": {
+          "select": "लिंग निवडा",
+          "male": "पुरुष",
+          "female": "महिला",
+          "other": "इतर"
+        },
+        "villageLabel": "गाव:",
+        "villagePlaceholder": "तुमच्या गावाचे नाव प्रविष्ट करा",
+        "submitButton": "सबमिट करा"
+      }
+    }
+}  
