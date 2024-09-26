@@ -10,7 +10,7 @@ pheno = YOLO('./pheno.pt', task="classify")
 
 router = APIRouter()
 
-@router.post('/pheno')
+@router.post('')
 async def pheno_detection(file: UploadFile = None):
     if file is None:
         raise HTTPException(status_code=400, detail="No file provided")

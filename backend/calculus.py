@@ -10,7 +10,7 @@ calculus = YOLO('./calculus.pt', task="classify")
 
 router = APIRouter()
 
-@router.post('/calculus')
+@router.post('')
 async def calculus_detection(file: UploadFile = None):
     if file is None:
         raise HTTPException(status_code=400, detail="No file provided")

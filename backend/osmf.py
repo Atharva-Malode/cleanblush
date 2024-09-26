@@ -10,7 +10,7 @@ osmf_model = YOLO('./best.pt', task="classify")
 
 router = APIRouter()
 
-@router.post('/osmf')
+@router.post('')
 async def osmf_detection(file: UploadFile = None):
     if file is None:
         raise HTTPException(status_code=400, detail="No file provided")

@@ -21,7 +21,7 @@ osmf = YOLO('./best.pt', task="classify")
 async def main():
     return {"message": "Hello World"}
 
-app.include_router(osmf_router)
-app.include_router(calculus_router)
-app.include_router(gingi_router)
-app.include_router(pheno_router)
+app.include_router(osmf_router, prefix="/osmf", tags=["Disease"])
+app.include_router(calculus_router, prefix="/calculus", tags=["Disease"])
+app.include_router(gingi_router, prefix='/gingi', tags=['Disease'])
+app.include_router(pheno_router, prefix='/pheno', tags=['Disease'])

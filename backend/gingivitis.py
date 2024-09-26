@@ -10,7 +10,7 @@ gingivitis_model = YOLO('./gingi.pt', task="classify")
 
 router = APIRouter()
 
-@router.post('/gingivitis')
+@router.post('')
 async def gingivitis_detection(file: UploadFile = None):
     if file is None:
         raise HTTPException(status_code=400, detail="No file provided")
