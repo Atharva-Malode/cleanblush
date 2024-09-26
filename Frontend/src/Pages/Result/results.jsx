@@ -21,8 +21,8 @@ function Results({ disease1, disease2, disease3, disease4, disease5 }) {
   }, []);
 
   useEffect(() => {
-    setDisease1(disease1);
-    setDisease2(disease2);
+    setDisease1(osmf);
+    setDisease2(gingivitis);
     setDisease3(phenotype);
     setDisease4(calculus);
     setDisease5(caries);

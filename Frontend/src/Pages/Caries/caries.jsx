@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavButton from "../../components/btn";
 import ReactCrop from 'react-image-crop';
+import content from "../data.json";
 import 'react-image-crop/dist/ReactCrop.css';
 
 function Caries({ onPredictionChange }) {
@@ -17,6 +18,30 @@ function Caries({ onPredictionChange }) {
     const [openCrop, isOpenCrop] = useState(false);
     const [crop, setCrop] = useState(null);
     const [uploadMode, setUploadMode] = useState(false);
+    const [language, setLanguage] = useState(localStorage.getItem('language') || 'english');
+
+
+    useEffect(() => {
+        // Check for changes in localStorage directly
+        const handleStorageChange = () => {
+          const newLanguage = localStorage.getItem('language');
+          if (newLanguage) {
+            setLanguage(newLanguage);
+            console.log('Language:', newLanguage);
+          }
+        };
+    
+        // Call the handler to set initial language
+        handleStorageChange();
+    
+        // Listen for storage changes
+        window.addEventListener('storage', handleStorageChange);
+    
+        // Cleanup event listener on unmount
+        return () => {
+          window.removeEventListener('storage', handleStorageChange);
+        };
+      }, []);
 
     useEffect(() => {
         console.log("Prediction state:", predictedClass);
@@ -179,10 +204,10 @@ function Caries({ onPredictionChange }) {
 
     return (
         <div>
-            <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">Caries Prediction</h1>
+            <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">{content.caries[language].title}</h1>
 
             <div className="mt-2 flex items-center">
-                <h2 className="text-2xl font-medium text-gray-700 mr-2">Select Camera:</h2>
+                <h2 className="text-2xl font-medium text-gray-700 mr-2">{content.caries[language].option}</h2>
                 <select
                     value={selectedCamera}
                     onChange={handleCameraChange}
@@ -198,18 +223,18 @@ function Caries({ onPredictionChange }) {
                 {streaming ? (
                     photoClicked && (
                         <button onClick={capturePhoto} className="ml-2 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Capture Photo
+                            {content.caries[language].cap}
                         </button>
                     )
                 ) : (
                     !uploadMode && (
                         <button onClick={toggleStreaming} className="ml-2 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Start Streaming
+                            {content.caries[language].startstream}
                         </button>
                     )
                 )}
                 <button onClick={toggleUploadMode} className="ml-2 mt-2 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                    {uploadMode ? "Use Camera" : "Upload Image"}
+                    {uploadMode ? `${content.caries[language].usecam}`: `${content.caries[language].upimg}`}
                 </button>
             </div>
 
@@ -238,9 +263,9 @@ function Caries({ onPredictionChange }) {
                 <div className="mt-4 flex space-x-4 items-center">
                     <img src={capturedPhoto} alt="Captured" className="w-full rounded-3xl shadow-2xl border border-gray-300" />
                     <div className="flex flex-col space-y-2 items-start">
-                        <button onClick={captureAgain} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Capture Again</button>
-                        <button onClick={cropPhoto} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Crop Image</button>
-                        <button onClick={checkCalculus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Check Calculus</button>
+                        <button onClick={captureAgain} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">{content.caries[language].capagain}</button>
+                        <button onClick={cropPhoto} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">{content.caries[language].crop}</button>
+                        <button onClick={checkCalculus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">{content.caries[language].check}</button>
                     </div>
                 </div>
             )}
@@ -252,8 +277,8 @@ function Caries({ onPredictionChange }) {
                             <img src={capturedPhoto} alt="Crop" />
                         </ReactCrop>
                         <div className="mt-4 flex justify-end space-x-2">
-                            <button onClick={cropPhoto} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
-                            <button onClick={saveCroppedImage} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Save</button>
+                            <button onClick={cropPhoto} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{content.caries[language].cancel}</button>
+                            <button onClick={saveCroppedImage} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">{content.caries[language].save}</button>
                         </div>
                     </div>
                 </div>
@@ -267,15 +292,15 @@ function Caries({ onPredictionChange }) {
                         className="max-w-full rounded-3xl"
                     />
                     <div className="flex flex-col space-y-2">
-                        <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">Results</h1>
+                        <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">{content.caries[language].res}</h1>
                         <span className="text-xl text-gray-700">{predictedClass}: {confidence}</span>
                     </div>
                 </div>
             )}
 
             <div className="justify-center gap-4 mt-4 grid grid-cols-2">
-                <NavButton text="Previous" destination="/selection" />
-                <NavButton text="Next" destination="/caries" />
+                <NavButton text={content.caries[language].prev} destination="/selection" />
+                <NavButton text={content.caries[language].next} destination="/caries" />
             </div>
         </div>
     );

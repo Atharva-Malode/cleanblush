@@ -139,7 +139,7 @@ function Osmf({ onPredictionChange }) {
                 const formData = new FormData();
                 formData.append('file', selectedImage);
 
-                const response = await fetch("http://127.0.0.1:8000/osmf", {
+                const response = await fetch("https://medicoreai.azurewebsites.net/osmf", {
                     method: 'POST',
                     body: formData
                 });
@@ -265,9 +265,9 @@ function Osmf({ onPredictionChange }) {
                 <div className="mt-4 flex space-x-4 items-center w-1/4 h-1/4">
                     <img src={capturedPhoto} alt="Captured" className="w-full h-auto rounded-3xl shadow-2xl border border-gray-300" />
                     <div className="flex flex-col space-y-2 items-start">
-                        <button onClick={captureAgain} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Capture Again</button>
-                        <button onClick={cropPhoto} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Crop Image</button>
-                        <button onClick={checkCalculus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Check OSMF</button>
+                        <button onClick={captureAgain} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">{content.osmf[language].capagain}</button>
+                        <button onClick={cropPhoto} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">{content.osmf[language].crop}</button>
+                        <button onClick={checkCalculus} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">{content.osmf[language].check}</button>
                     </div>
                 </div>
             )}
@@ -279,8 +279,8 @@ function Osmf({ onPredictionChange }) {
                             <img src={capturedPhoto} alt="Crop" />
                         </ReactCrop>
                         <div className="mt-4 flex justify-end space-x-2">
-                            <button onClick={cropPhoto} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
-                            <button onClick={saveCroppedImage} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Save</button>
+                            <button onClick={cropPhoto} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{content.osmf[language].cancel}</button>
+                            <button onClick={saveCroppedImage} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">{content.osmf[language].save}</button>
                         </div>
                     </div>
                 </div>
@@ -294,36 +294,36 @@ function Osmf({ onPredictionChange }) {
                         className="w-full h-auto rounded-3xl"
                     />
                     <div className="flex flex-col space-y-2">
-                        <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">Results</h1>
+                        <h1 className="font-serif text-4xl font-bold text-indigo-600 leading-tight">{content.osmf[language].res}</h1>
                         <span className="text-xl text-gray-700">{predictedClass}: {confidence}</span>
                     </div>
                 </div>
             )}
 
             <div className="justify-center gap-4 mt-4 grid grid-cols-2">
-                <NavButton text="Previous" destination="/selection" />
-                <NavButton text="Next" destination="/gingivitis" />
+                <NavButton text={content.osmf[language].prev} destination="/selection" />
+                <NavButton text={content.osmf[language].next} destination="/gingivitis" />
             </div>
 
             {openDou && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
                     <div className="bg-white p-6 rounded-3xl shadow-lg max-w-lg">
-                        <h2 className="text-2xl font-bold text-indigo-600 mb-4">Directions of Use</h2>
+                        <h2 className="text-2xl font-bold text-indigo-600 mb-4">{content.osmf[language].dou}</h2>
                         <p className="text-gray-700 mb-4 text-left">
-                            <strong>To capture an image using the camera:</strong>
+                            <strong>{content.osmf[language].steps[6]}</strong>
                             <ul className="list-disc ml-4">
-                                <li>Select the appropriate camera from the dropdown menu.</li>
-                                <li>Click "Start Streaming" to begin the camera stream.</li>
-                                <li>Click "Capture Photo" to take a picture of your intraoral cheeks.</li>
+                                <li>{content.osmf[language].steps[1]}</li>
+                                <li>{content.osmf[language].steps[2]}</li>
+                                <li>{content.osmf[language].steps[3]}</li>
                             </ul>
                             <br />
-                            <strong>To upload an image:</strong>
+                            <strong>{content.osmf[language].steps[7]}</strong>
                             <ul className="list-disc ml-4">
-                                <li>Click "Upload Image" to open the file selector.</li>
-                                <li>Choose an image that focuses only on the intraoral cheeks.</li>
+                                <li>{content.osmf[language].steps[4]}</li>
+                                <li>{content.osmf[language].steps[5]}</li>
                             </ul>
                         </p>
-                        <button onClick={() => setOpenDou(false)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Close</button>
+                        <button onClick={() => setOpenDou(false)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">{content.osmf[language].close}</button>
                     </div>
                 </div>
             )}
