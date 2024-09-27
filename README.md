@@ -24,6 +24,12 @@ Our journey began when our teammate **Chaitnya** met with an accident and lost p
 
 ---
 
+## Links:
+- **[Product Link (Vercel Deployment)](https://cleanblush.vercel.app/)**
+- **[Backend Link (Azure Deployment)](https://medicoreai.azurewebsites.net/docs)**
+
+---
+
 ## Impact  
 By deploying *CleanBlush* in rural India, we aim to:
 - Reduce the need for unnecessary travel, saving **time**, **money**, and **effort** for patients.
